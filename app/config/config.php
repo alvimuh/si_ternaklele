@@ -1,10 +1,10 @@
 <?php
 
 
-define('BASEURL', 'http://localhost/10517094/phpmvc_flasher/public');
+define('BASEURL', 'http://localhost/si_ternaklele');
 
 //db'
 define('DB_HOST','localhost');
 define('DB_USER','root');
 define('DB_PASS','');
-define('DB_NAME','phpmvc');
+define('DB_NAME','ternaklele');
