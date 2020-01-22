@@ -1,7 +1,7 @@
 <div class="container">
   <div class="py-5 text-center">
     
-    <h2>Form Pembibitan</h2>
+    <h2>Form Penjadwalan</h2>
   </div>
 
   <div class="row">
@@ -63,37 +63,54 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="kodebibit">Kode Bibit</label>
-            <input type="text" class="form-control" id="kodebibit" placeholder="" value="" required>
+            <input type="text" class="form-control" id="kodebibit" name="kodebibit" placeholder="" value="" required>
           </div>
-          <div class="col-md-5 mb-3">
-            <label for="jenisbibit">Jenis Bibit</label>
-            <select class="custom-select d-block w-100" id="jenisbibit" required>
-              <option value="">Pilih...</option>
-              <option>Cacing Sutra</option>
-              <option>UB High Grit</option>
-              <option>PF 128</option>
-              <option>Karagi Halus</option>
-              <option>Prima Feel LP</option>
-              <option>PF 1000</option>
-              <option>Cargil</option>
-              <option>Preo 130</option>
-            </select>
+          <div class="col-md-6 mb-3">
+            <label for="kodejadwal">Kode Jadwal</label>
+            <input type="text" class="form-control" id="kodejadwal" name="kodejadwal" placeholder="" value="" required>
           </div>
-          <div class="col-md-3 mb-3">
-            <label for="jumlahbibit">Jumlah Bibit</label>
-            <input type="text" class="form-control" id="jumlahbibit" placeholder="" required>
-            <div class="invalid-feedback">
-              Zip code required.
+          <div class="col-md-4 mb-3">
+            <label for="nokolam">No Kolam</label>
+            <input type="text" class="form-control" id="nokolam" name="nokolam" placeholder="" required>
+          </div>
+          <div class="col-md-8 mb-3">
+            <label for="umur">Umur</label>
+            <input type="text" class="form-control" id="umur" name="umur" placeholder="" required>
+          </div>
+          <div class="col-md-8 mb-3">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="same-address">
+              <label class="custom-control-label" for="same-address">Senin 27 Januari 2020</label>
             </div>
           </div>
-          <div class="col-md-3 mb-3">
-            <label for="tglpenebaran">Tanggal Penebaran</label>
-            <input type="text" class="form-control" id="tglpenebaran" placeholder="" required>
+          <div class="col-md-12 mb-3">
+            <label for="tglpenus">Tanggal Penustrian</label>
+            <input type="text" class="form-control" id="tglpenus" name="tglpenus" placeholder="" required>
           </div>
-          <div class="col-md-3 mb-3">
-            <label for="nokolam">No Kolam</label>
-            <input type="text" class="form-control" id="nokolam" placeholder="" required>
+          <div class="col-md-4 mb-3">
+            <label for="jampakan">Jam Pakan</label>
+            <input type="text" class="form-control" id="jampakan" name="jampakan" placeholder="" required>
           </div>
+          <div class="col-md-6 mb-3">
+            <div class="d-block my-3">
+              <div class="custom-control custom-radio">
+                <input id="pilihjampakan" name="pilihjampakan" type="radio" class="custom-control-input" checked="" required="">
+                <label class="custom-control-label" for="credit">Pagi</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="pilihjampakan" name="pilihjampakan" type="radio" class="custom-control-input" required="">
+                <label class="custom-control-label" for="debit">Siang</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="pilihjampakan" name="pilihjampakan" type="radio" class="custom-control-input" required="">
+                <label class="custom-control-label" for="paypal">Malam</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="jenispakan">Jenis Pakan</label>
+            <input type="text" class="form-control" id="jenispakan" name="jenispakan" placeholder="" required>
+        </div>
         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit">Save</button>
         <button class="btn btn-primary btn-lg btn-block" type="reset">Reset</button>
