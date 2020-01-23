@@ -14,6 +14,12 @@ class Pembibitan_model
         $this->db->query('SELECT * FROM ' . $this->table);
         return $this->db->resultSet();
     }
+    public function getById($id)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE kode_bibit=:id');
+        $this->db->bind('id', $id);
+        return $this->db->single();
+    }
     public function insert($data)
     {
         $query = "INSERT INTO bibit VALUES(:kode_bibit,:tgl_penebaran_bibit,:jenis_bibit,:jumlah_bibit,:no_kolam)";

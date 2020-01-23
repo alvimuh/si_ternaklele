@@ -16,6 +16,7 @@
 
       </div>
       <ul class="list-group mb-3">
+        <?php Flasher::flash(); ?>
         <?php foreach ($data['bibit'] as $bibit) : ?>
           <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
