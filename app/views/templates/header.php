@@ -15,12 +15,15 @@
 			</button>
 			<div class="collapse navbar-collapse " id="navbarNavAltMarkup">
 				<div class="navbar-nav ml-auto">
-					<a class="nav-item nav-link active" href="<?= BASEURL; ?>">Home <span class="sr-only">(current)</span></a>
-
-					<a class="nav-item nav-link" href="<?= BASEURL; ?>/pembibitan">Pembibitan</a>
-					<a class="nav-item nav-link" href="<?= BASEURL; ?>/penjadwalan">Penjadwalan</a>
-					<a class="nav-item nav-link" href="<?= BASEURL; ?>/update_stock">Update Stock</a>
-					<a class="nav-item nav-link" href="<?= BASEURL; ?>/panen">Panen</a>
+					<?php
+					//Tambah Menu di array ini
+					$menus = array('Home', 'Pembibitan', 'Penjadwalan', 'Update Stock', 'Panen');
+					foreach ($menus as $menu) { ?>
+						<a class="nav-item nav-link <?= ($data['judul'] == $menu ? 'active' : '') ?>" href="<?= BASEURL . '/' . strtolower($menu) ?>">
+							<?= $menu ?>
+							<?= ($data['judul'] == $menu ? '<span class="sr-only">(current)</span>' : '') ?>
+						</a>
+					<?php } ?>
 
 				</div>
 			</div>

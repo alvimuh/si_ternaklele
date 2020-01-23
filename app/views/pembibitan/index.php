@@ -24,10 +24,10 @@
                 <?= $bibit['jenis_bibit']; ?>
                 <span class="text-muted">(Kolam no <?= $bibit['no_kolam']; ?>)</span>
               </h6>
-              <small class="text-muted">Kode bibit: <b> <?= $bibit['kode_bibit']; ?></b>.</small>
+              <small class="text-muted">Jumlah bibit: <b> <?= $bibit['jumlah_bibit']; ?></b>.</small>
               <small class="text-muted"> Tanggal Penebaran: <b><?= $bibit['tgl_penebaran_bibit']; ?></b>.</small>
             </div>
-            <p><span class="text-muted">Jumlah bibit: </span><span class="badge badge-pill bg-primary text-light "><?= $bibit['jumlah_bibit']; ?></span></p>
+            <p><span class="text-muted"></span><span class="badge badge-pill bg-primary text-light ">Kode: <?= $bibit['kode_bibit']; ?></span></p>
           </li>
         <?php endforeach; ?>
       </ul>
