@@ -11,12 +11,12 @@ class Pembibitan_model
     }
     public function getAll()
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT *, datediff(CURDATE(), tgl_penebaran_bibit) as umur_bibit FROM ' . $this->table);
         return $this->db->resultSet();
     }
     public function getById($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE kode_bibit=:id');
+        $this->db->query('SELECT *, datediff(CURDATE(), tgl_penebaran_bibit) as umur_bibit  FROM ' . $this->table . ' WHERE kode_bibit=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }

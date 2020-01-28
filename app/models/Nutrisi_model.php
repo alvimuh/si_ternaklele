@@ -1,8 +1,8 @@
 <?php
 
-class Pakan_model
+class Nutrisi_model
 {
-    private $table = 'pakan';
+    private $table = 'nutrisi';
     private $db;
 
     public function __construct()
@@ -16,14 +16,14 @@ class Pakan_model
     }
     public function getById($id)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE kode_pakan=:id');
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE kode_nutrisi=:id');
         $this->db->bind('id', $id);
         return $this->db->single();
     }
-    public function updateStok($kode_pakan, $qty)
+    public function updateStok($kode_nutrisi, $qty)
     {
-        $this->db->query('UPDATE `pakan` SET `jumlah_pakan`=jumlah_pakan+(:jumlah) WHERE `kode_pakan` LIKE :kode_pakan');
-        $this->db->bind('kode_pakan', $kode_pakan);
+        $this->db->query('UPDATE `nutrisi` SET `jumlah_nutrisi`=jumlah_nutrisi+(:jumlah) WHERE `kode_nutrisi` LIKE :kode_nutrisi');
+        $this->db->bind('kode_nutrisi', $kode_nutrisi);
         $this->db->bind('jumlah', $qty);
         $this->db->execute();
         return $this->db->rowCount();
@@ -41,16 +41,15 @@ class Pakan_model
 
         // return $this->db->rowCount();
     }
-    public function PemberianPakanInsert($data)
+    public function PemberianNutrisiInsert($data)
     {
-        $query = "INSERT INTO pemberian_pakan VALUES('',:kode_bibit,:waktu_pemberian,:tanggal_jam_pemberian,:kode_pakan,:qty_pakan)";
+        $query = "INSERT INTO pemberian_nutrisi VALUES('',:kode_bibit,:tanggal_jam_pemberian,:kode_nutrisi,:qty_nutrisi)";
         $this->db->query($query);
 
         $this->db->bind('kode_bibit', $data['kode_bibit']);
         $this->db->bind('tanggal_jam_pemberian', $data['tanggal_jam_pemberian']);
-        $this->db->bind('waktu_pemberian', 'Pagi');
-        $this->db->bind('kode_pakan', $data['kode_pakan']);
-        $this->db->bind('qty_pakan', $data['qty_pakan']);
+        $this->db->bind('kode_nutrisi', $data['kode_nutrisi']);
+        $this->db->bind('qty_nutrisi', $data['qty_nutrisi']);
         $this->db->execute();
         return $this->db->rowCount();
     }

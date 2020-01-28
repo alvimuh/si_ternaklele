@@ -27,6 +27,11 @@
               </h6>
               <small class="text-muted">Jumlah bibit: <b> <?= $bibit['jumlah_bibit']; ?></b>.</small>
               <small class="text-muted"> Tanggal Penebaran: <b><?= $bibit['tgl_penebaran_bibit']; ?></b>.</small>
+              <small class="text-muted"> Umur: <b><?= $bibit['umur_bibit']; ?> hari</b>.</small>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <?= intval($bibit['umur_bibit'] / 40 * 100) . '%'; ?>" aria-valuenow="" aria-valuemin="0" aria-valuemax="30"></div>
+              </div>
+
             </div>
             <p><span class="text-muted"></span><span class="badge badge-pill bg-primary text-light ">Kode: <?= $bibit['kode_bibit']; ?></span></p>
           </li>
