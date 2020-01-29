@@ -11,7 +11,7 @@ class Penjadwalan_model
     }
     public function getJadwal()
     {
-        $this->db->query('SELECT * FROM jadwal ');
+        $this->db->query('SELECT * FROM jadwal ORDER BY tanggal_jadwal DESC');
         return $this->db->resultSet();
     }
     public function getJadwalById($id)
@@ -24,6 +24,14 @@ class Penjadwalan_model
     {
         $this->db->query('UPDATE `jadwal` SET `status`=1 WHERE id_jadwal LIKE :id');
         $this->db->bind('id', $id);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+    public function BuatJadwal($tanggal_jadwal, $tipe_jadwal)
+    {
+        $this->db->query('INSERT INTO `jadwal`(`id_jadwal`, `tanggal_jadwal`, `tipe_jadwal`, `status`) VALUES ("",:tanggal_jadwal,:tipe_jadwal,"2")');
+        $this->db->bind('tanggal_jadwal', $tanggal_jadwal);
+        $this->db->bind('tipe_jadwal', $tipe_jadwal);
         $this->db->execute();
         return $this->db->rowCount();
     }

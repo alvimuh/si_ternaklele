@@ -45,8 +45,8 @@
                                         <th scope="col">Kode Bibit</th>
                                         <th scope="col">Jenis Bibit</th>
                                         <th scope="col">Umur</th>
-                                        <th scope="col">Jenis Nutrisi</th>
-                                        <th scope="col">Qty Nutrisi</th>
+                                        <th scope="col">Jenis Pakan</th>
+                                        <th scope="col">Qty Pakan</th>
                                     </tr>
                                 </thead>
                                 <tbody>

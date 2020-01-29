@@ -2,12 +2,19 @@
 
 class Pembibitan extends Controller
 {
+    function __construct()
+    {
+        if (strtolower($_SESSION['login']['role']) == 'admin') {
+            Flasher::setFlash('Kesalahan login.', 'Anda tidak memiliki hak akses', 'danger');
+            header('Location:' . BASEURL . '/login');
+            unset($_SESSION['login']);
+        }
+    }
     public function index()
     {
         $data['judul'] = 'Pembibitan';
         $data['bibit'] = $this->model('Pembibitan_model')->getAll();
 
-        // var_dump($perbedaan);
         $this->view('templates/header', $data);
         $this->view('pembibitan/index', $data);
         $this->view('templates/footer');

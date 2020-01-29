@@ -2,6 +2,14 @@
 
 class Penjadwalan extends Controller
 {
+    function __construct()
+    {
+        if (strtolower($_SESSION['login']['role']) != 'user') {
+            Flasher::setFlash('Kesalahan login.', 'Anda tidak memiliki hak akses', 'danger');
+            header('Location:' . BASEURL . '/login');
+            unset($_SESSION['login']);
+        }
+    }
     public function index()
     {
         $data['judul'] = 'Penjadwalan';

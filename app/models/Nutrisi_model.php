@@ -28,18 +28,25 @@ class Nutrisi_model
         $this->db->execute();
         return $this->db->rowCount();
     }
+    public function setQty($data)
+    {
+        $this->db->query('UPDATE `nutrisi` SET `jumlah_nutrisi`=:jumlah WHERE `kode_nutrisi` LIKE :kode_nutrisi');
+        $this->db->bind('kode_nutrisi', $data['kode_nutrisi']);
+        $this->db->bind('jumlah', $data['jumlah_nutrisi']);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
     public function insert($data)
     {
-        // $query = "INSERT INTO bibit VALUES(:kode_bibit,:tgl_penebaran_bibit,:jenis_bibit,:jumlah_bibit,:no_kolam)";
-        // $this->db->query($query);
-        // $this->db->bind('kode_bibit', $data['kode_bibit']);
-        // $this->db->bind('tgl_penebaran_bibit', $data['tgl_penebaran_bibit']);
-        // $this->db->bind('jenis_bibit', $data['jenis_bibit']);
-        // $this->db->bind('jumlah_bibit', $data['jumlah_bibit']);
-        // $this->db->bind('no_kolam', $data['no_kolam']);
-        // $this->db->execute();
+        $query = "INSERT INTO nutrisi VALUES(:kode_nutrisi,:jenis_nutrisi,:nama_nutrisi,:jumlah_nutrisi)";
+        $this->db->query($query);
+        $this->db->bind('kode_nutrisi', $data['kode_nutrisi']);
+        $this->db->bind('jenis_nutrisi', $data['jenis_nutrisi']);
+        $this->db->bind('nama_nutrisi', $data['nama_nutrisi']);
+        $this->db->bind('jumlah_nutrisi', $data['jumlah_nutrisi']);
+        $this->db->execute();
 
-        // return $this->db->rowCount();
+        return $this->db->rowCount();
     }
     public function PemberianNutrisiInsert($data)
     {

@@ -39,16 +39,15 @@
                                 <td><?= $jadwal['status'] ?></td>
                                 <?php
                                 $tipe_jadwal = '';
-                                if (strcmp($jadwal['status'], "Pemberian pakan")) {
+                                if ($jadwal['tipe_jadwal'] == "Pemberian Pakan") {
                                     $tipe_jadwal = 'pemberian_pakan';
-                                } else if (strcmp($jadwal['status'], "Pemberian nutrisi")) {
+                                } else if ($jadwal['tipe_jadwal'] == "Pemberian Nutrisi") {
                                     $tipe_jadwal = 'pemberian_nutrisi';
-                                }
-                                if (strcmp($jadwal['status'], "Pemberian pakan")) {
-                                    $tipe_jadwal = 'pemberian_pakan';
+                                } else if ($jadwal['tipe_jadwal'] == "Pembersihan Kolam") {
+                                    $tipe_jadwal = 'pembersihan_kolam';
                                 }
 
-                                if (strcmp($jadwal['status'], "Sudah")) { ?>
+                                if ($jadwal['status'] == "Belum") { ?>
                                     <td><a href="<?= BASEURL . '/penjadwalan/' . $tipe_jadwal . '/' . $jadwal['id_jadwal'] ?>" class="btn btn-sm btn-outline-primary">Isi form</a></td>
                                 <?php } else { ?>
                                     <td><a href="#" class="btn btn-sm btn-outline-success disabled">Sudah terisi</a></td>

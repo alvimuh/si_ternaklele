@@ -15,17 +15,17 @@
 			</button>
 			<div class="collapse navbar-collapse " id="navbarNavAltMarkup">
 				<div class="navbar-nav ml-auto">
-					<?php
-					//Tambah Menu di array ini
-					$menus = array('Pembibitan', 'Penjadwalan', 'Panen');
-					foreach ($menus as $menu) { ?>
-						<a class="nav-item nav-link <?= ($data['judul'] == $menu ? 'active' : '') ?>" href="<?= BASEURL . '/' . strtolower($menu) ?>">
-							<?= $menu ?>
-							<?= ($data['judul'] == $menu ? '<span class="sr-only">(current)</span>' : '') ?>
-						</a>
-					<?php } ?>
+					<a class="nav-item nav-link " href="<?= BASEURL . '/admin_pembibitan' ?>">
+						Pembibitan </a>
+					<a class="nav-item nav-link " href="<?= BASEURL . '/admin_penjadwalan' ?>">
+						Penjadwalan </a>
+					<a class="nav-item nav-link " href="<?= BASEURL . '/admin_stok' ?>">
+						Stok </a>
+					<a class="nav-item nav-link " href="<?= BASEURL . '/admin_panen' ?>">
+						Panen </a>
 					<a class="nav-item nav-link " href="<?= BASEURL . '/login/end' ?>">
 						Logout </a>
+
 				</div>
 			</div>
 		</div>
