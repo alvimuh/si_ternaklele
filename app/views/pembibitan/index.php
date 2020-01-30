@@ -5,7 +5,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-9 order-md-1 mb-4">
+    <div class="col-md-12 order-md-1 mb-4">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="">
           <span class="text-muted">Data Bibit</span>
@@ -27,6 +27,11 @@
               </h6>
               <small class="text-muted">Jumlah bibit: <b> <?= $bibit['jumlah_bibit']; ?></b>.</small>
               <small class="text-muted"> Tanggal Penebaran: <b><?= $bibit['tgl_penebaran_bibit']; ?></b>.</small>
+              <small class="text-muted"> Umur: <b><?= $bibit['umur_bibit']; ?> hari</b>.</small>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <?= intval($bibit['umur_bibit'] / 45 * 100) . '%'; ?>" aria-valuenow="" aria-valuemin="0" aria-valuemax="30"></div>
+              </div>
+
             </div>
             <p><span class="text-muted"></span><span class="badge badge-pill bg-primary text-light ">Kode: <?= $bibit['kode_bibit']; ?></span></p>
           </li>
@@ -35,13 +40,7 @@
 
 
     </div>
-    <div class="col-md-3 order-md-2">
-      <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span class="text-muted">Informasi</span>
 
-      </h4>
-
-    </div>
   </div>
 
 
@@ -74,14 +73,12 @@
                 <label for="jenisbibit">Jenis Bibit</label>
                 <select class="custom-select d-block w-100" id="jenis_bibit" name="jenis_bibit" required>
                   <option value="">Pilih...</option>
-                  <option value="Cacing Sutra">Cacing Sutra</option>
-                  <option value="UB High Grit">UB High Grit</option>
-                  <option value="PF 128">PF 128</option>
-                  <option value="Karagi Halus">Karagi Halus</option>
-                  <option value="Prima Feel LP">Prima Feel LP</option>
-                  <option value="PF 1000">PF 1000</option>
-                  <option value="Cargil">Cargil</option>
-                  <option value="Preo 130">Preo 130</option>
+                  <option value="Lele Jumbo">Lele Jumbo</option>
+                  <option value="Lele Jawa">Lele Jawa</option>
+                  <option value="Lele Lokal">Lele Lokal</option>
+                  <option value="Lele Phyton">Lele Phyton</option>
+                  <option value="Lele Sangkuriang">Lele Sangkuriang</option>
+                  <option value="Lele Mutiara">Lele Mutiara</option>
                 </select>
               </div>
               <div class="col-md-3 mb-3">

@@ -11,17 +11,32 @@
         <div class="card-body">
           <h5>Detail bibit</h5>
           <div class="row">
-            <div class="col-sm-4">
+            <div class="col-sm-4 mb-2">
               <span class="text-muted">Kode Bibit</span>
               <p class="m-0"><?= $data['bibit']['kode_bibit'] ?></p>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 mb-2">
               <span class="text-muted">Jenis Bibit</span>
               <p class="m-0"><?= $data['bibit']['jenis_bibit'] ?></p>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-4 mb-2">
               <span class="text-muted">No Kolam</span>
               <p class="m-0"><?= $data['bibit']['no_kolam'] ?></p>
+            </div>
+            <div class="col-sm-4 mb-2">
+              <span class="text-muted">Jumlah Bibit</span>
+              <p class="m-0"><?= $data['bibit']['jumlah_bibit'] ?></p>
+            </div>
+            <div class="col-sm-4 mb-2">
+              <span class="text-muted">Tgl Penerbaran</span>
+              <p class="m-0"><?= $data['bibit']['tgl_penebaran_bibit'] ?></p>
+            </div>
+            <div class="col-sm-12 mb-2">
+              <span class="text-muted">Umur</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: <?= intval($data['bibit']['umur_bibit'] / 45 * 100) . '%'; ?>" aria-valuenow="" aria-valuemin="0" aria-valuemax="30"><?= $data['bibit']['umur_bibit'] ?> hari</div>
+              </div>
+
             </div>
           </div>
         </div>
