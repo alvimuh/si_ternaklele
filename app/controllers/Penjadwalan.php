@@ -5,7 +5,7 @@ class Penjadwalan extends Controller
     public function index()
     {
         $data['judul'] = 'Penjadwalan';
-        $data['jadwal'] = array();
+        $data['jadwal'] = $this->model('Pembibitan_model')->getAll();
         $this->view('templates/header', $data);
         $this->view('penjadwalan/index', $data);
         $this->view('templates/footer');
