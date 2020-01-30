@@ -13,36 +13,6 @@ class Penjadwalan extends Controller
     public function index()
     {
         $data['judul'] = 'Penjadwalan';
-        $data['jadwal'] = $this->model('Penjadwalan_model')->getJadwal();
-        // $data['bibit'] = $this->model('Pembibitan_model')->getAll();
-        // $data['pemberian_pakan'] = $this->model('Penjadwalan_model')->getPemberianPakan();
-        // $data['pemberian_nutrisi'] = $this->model('Penjadwalan_model')->getPemberianNutrisi();
-
-        // //Mengecek status pemberian pakan (sudah/belum)
-        // for ($x = 0; $x < count($data['bibit']); $x++) {
-        //     $data['bibit'][$x]['pagi'] = false;
-        //     $data['bibit'][$x]['siang'] = false;
-        //     $data['bibit'][$x]['sore'] = false;
-
-        //     foreach ($data['pemberian_pakan'] as $pemberian_pakan) {
-        //         $cekKodeBibit = $data['bibit'][$x]['kode_bibit'] == $pemberian_pakan['kode_bibit'];
-        //         $cekToday = date('d M Y') == date('d M Y', strtotime($pemberian_pakan['tanggal_jam_pemberian']));
-        //         if ($cekKodeBibit && $cekToday) {
-        //             switch (strtolower($pemberian_pakan['waktu_pemberian'])) {
-        //                 case 'pagi':
-        //                     $data['bibit'][$x]['pagi'] = true;
-        //                     break;
-        //                 case 'siang':
-        //                     $data['bibit'][$x]['siang'] = true;
-        //                     break;
-        //                 case 'sore':
-        //                     $data['bibit'][$x]['sore'] = true;
-        //                     break;
-        //             }
-        //         }
-        //     }
-        // };
-
 
         $this->view('templates/header', $data);
         $this->view('penjadwalan/index', $data);
