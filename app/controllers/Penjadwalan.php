@@ -142,4 +142,16 @@ class Penjadwalan extends Controller
             header('Location:' . BASEURL . '/penjadwalan');
         }
     }
+
+    public function pembersihan_kolam($kode_jadwal)
+    {
+        if ($this->model('Penjadwalan_model')->updateStatus($kode_jadwal) > 0) {
+            Flasher::setFlash('Berhasil!', 'Pembersihan kolam telah dilakukan', 'success');
+            header('Location:' . BASEURL . '/penjadwalan');
+            exit;
+        } else {
+            Flasher::setFlash('Gagal menginput data!', '', 'danger');
+            header('Location:' . BASEURL . '/penjadwalan');
+        }
+    }
 }

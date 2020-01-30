@@ -51,5 +51,8 @@ class Admin_Penjadwalan extends Controller
                 $this->model('Penjadwalan_model')->BuatJadwal($dt->format("Y-m-d"), $_POST['jenis_jadwal']);
             }
         }
+        Flasher::setFlash('Berhasil!', 'Jadwal telah ditambahkan', 'success');
+        header('Location:' . BASEURL . '/admin_penjadwalan/');
+        exit;
     }
 }

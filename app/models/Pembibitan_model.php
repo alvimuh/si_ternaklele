@@ -11,7 +11,7 @@ class Pembibitan_model
     }
     public function getAll()
     {
-        $this->db->query('SELECT *, datediff(CURDATE(), tgl_penebaran_bibit) as umur_bibit FROM ' . $this->table);
+        $this->db->query('SELECT *, datediff(CURDATE(), tgl_penebaran_bibit) as umur_bibit FROM bibit WHERE status_panen=0');
         return $this->db->resultSet();
     }
     public function getById($id)
@@ -56,5 +56,11 @@ class Pembibitan_model
         $this->db->bind('kode_bibit', $kode_bibit);
         $this->db->execute();
         return $this->db->rowCount();
+    }
+
+    public function getPanen()
+    {
+        $this->db->query('SELECT * FROM `panen` INNER JOIN `bibit` ON panen.kode_bibit = bibit.kode_bibit');
+        return $this->db->resultSet();
     }
 }

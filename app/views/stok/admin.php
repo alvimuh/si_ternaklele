@@ -112,7 +112,7 @@
                             <input type="text" class="form-control" id="nama_pakan" name="nama_pakan" placeholder="" required>
                         </div>
                         <div class="col-md-12 mb-3">
-                            <label for="nokolam">Jumlah Pakan</label>
+                            <label for="nokolam">Jumlah Pakan (gram)</label>
                             <input type="number" class="form-control" id="jumlah_pakan" name="jumlah_pakan" placeholder="" required>
                         </div>
                         <hr class="mb-4">
@@ -156,7 +156,7 @@
                             <input type="text" class="form-control" id="nama_nutrisi" name="nama_nutrisi" placeholder="" required>
                         </div>
                         <div class="col-md-12 mb-3">
-                            <label for="nokolam">Jumlah Nutrisi</label>
+                            <label for="nokolam">Jumlah Nutrisi (ml)</label>
                             <input type="number" class="form-control" id="jumlah_nutrisi" name="jumlah_nutrisi" placeholder="" required>
                         </div>
                         <hr class="mb-4">
